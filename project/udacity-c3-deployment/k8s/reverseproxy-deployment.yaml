@@ -5,14 +5,14 @@ metadata:
     service: reverseproxy
   name: reverseproxy
 spec:
-  replicas: 2
+  replicas: 3
   template:
     metadata:
       labels:
         service: reverseproxy
     spec:
       containers:
-      - image: scheele/reverseproxy
+      - image: jitendra93/reverseproxy
         name: reverseproxy
         imagePullPolicy: Always          
         resources:

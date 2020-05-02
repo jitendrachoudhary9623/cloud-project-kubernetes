@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: scheele/reverseproxy
+      image: jitendra93/reverseproxy
       ports:
           - 8080:8080
       restart: always
@@ -9,7 +9,7 @@ services:
         - backend-user
         - backend-feed     
   backend-user:
-    image: scheele/udacity-restapi-user
+    image: jitendra93/user-service
     environment:
       POSTGRESS_USERNAME: $POSTGRESS_USERNAME
       POSTGRESS_PASSWORD: $POSTGRESS_PASSWORD 
@@ -35,6 +35,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: scheele/udacity-frontend:local
+    image: jitendra93/frontend
     ports:
       - "8100:80"
